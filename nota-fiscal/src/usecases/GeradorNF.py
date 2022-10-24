@@ -8,5 +8,6 @@ class GeradorNF:
       imposto = fatura.valor * 0.25
     elif(fatura.tipo == TipoFatura.TREINAMENTO):
       imposto = fatura.valor * 0.15
-
+    else:
+      imposto = fatura.valor * 0.06
     return NotaFiscal(fatura.cliente, fatura.valor, imposto) 
