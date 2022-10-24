@@ -1,3 +1,4 @@
+from src.services.SMTPService import SMTP
 from src.enums.TipoFatura import TipoFatura
 from src.entities.Fatura import Fatura
 from src.usecases.GeradorNF import GeradorNF
