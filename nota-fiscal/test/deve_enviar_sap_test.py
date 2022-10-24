@@ -1,3 +1,4 @@
+from src.services.SAPService import SAP
 from src.enums.TipoFatura import TipoFatura
 from src.entities.Fatura import Fatura
 from src.usecases.GeradorNF import GeradorNF
