@@ -30,7 +30,7 @@ def test_gera_nota_fiscal_25_imposto():
 def test_gera_nota_fiscal_15_imposto():
   nome_cliente = "Carlos"
   endereco_cliente = "Rua A"
-  tipo_servico = TipoFatura.CONSULTORIA
+  tipo_servico = TipoFatura.TREINAMENTO
   valor_fatura = 1000
   fatura = Fatura(nome_cliente, endereco_cliente, tipo_servico, valor_fatura)
 
