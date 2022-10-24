@@ -51,4 +51,4 @@ def test_gera_nota_fiscal_6_imposto():
 
   nf = gerador_nf.execute(fatura)
   assert nf.valor == valor_fatura
-  assert nf.imposto == valor_fatura * 0.15
+  assert nf.imposto == valor_fatura * 0.06
