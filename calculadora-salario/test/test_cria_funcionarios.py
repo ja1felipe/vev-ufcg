@@ -1,3 +1,6 @@
+from src.entities.Funcionario import Funcionario
+from src.utils.validate import check_cargo,check_email
+
 def test_cria_funcionario():
     nome = "masenko"
     email = "masenko@gmail.com"
@@ -13,36 +16,36 @@ def test_cria_funcionario():
     
 
 def test_cria_funcionario_sem_nome():
-    nome = "masenko"
+    nome = ""
     email = "masenko@gmail.com"
     salario_base = 2000
     cargo = "desenvolvedor"
 
     funcionario = Funcionario(nome, email, salario_base, cargo)
 
-    assert nome == funcionario.nome 
+    assert len(funcionario.nome) == 0
 
-def test_cria_funcionario_email_errado():
+def test_cria_funcionario_email_invalido():
     nome = "masenko"
-    email = "masenko@gmail.com"
+    email = "masenko.com"
     salario_base = 2000
     cargo = "desenvolvedor"
 
     funcionario = Funcionario(nome, email, salario_base, cargo)
 
-    cargo_funcionario =  EnumCargos[cargo.upper()].value
-
-    assert nome == funcionario.nome 
+    email_flag = check_email(funcionario.email)
+    
+    assert not email_flag 
 
 
 def test_cria_funcionario_cargo_inexistente():
     nome = "masenko"
     email = "masenko@gmail.com"
     salario_base = 2000
-    cargo = "desenvolvedor"
+    cargo = "malabarista"
 
     funcionario = Funcionario(nome, email, salario_base, cargo)
 
-    cargo_funcionario =  EnumCargos[cargo.upper()].value
+    cargo_flag = check_cargo(funcionario.cargo)
 
-    assert nome == funcionario.nome 
+    assert not cargo_flag 
